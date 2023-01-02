@@ -1,8 +1,6 @@
 package br.com.colecoes_parte_2;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,6 +37,18 @@ public class Tarefa {
             masculino.add(pessoa);
         }else{
             System.out.println("Digite o Sexo corretamente, utilizando somente Masculino e Feminino");
+        }
+
+        System.out.println("**** Arrays ****");
+
+        System.out.println("Masculino:");
+        for(int i = 0; i<masculino.size() ; i++) {
+            System.out.println(masculino.get(i).getNome() + " , " + masculino.get(i).getSexo());
+        }
+
+        System.out.println("Feminino:");
+        for(int i = 0; i<feminino.size() ; i++) {
+            System.out.println(feminino.get(i).getNome() + " , " + feminino.get(i).getSexo());
         }
     }
 }
