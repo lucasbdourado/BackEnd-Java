@@ -11,6 +11,9 @@ public class Carro {
     private float volante;
 
     private boolean embreagem;
+    private float velocidade;
+
+    private int marcha;
 
     public float getVelocidade() {
         return velocidade;
@@ -21,10 +24,6 @@ public class Carro {
     public void setVelocidade(float velocidade) {
         this.velocidade = velocidade;
     }
-
-    private float velocidade;
-
-    private int marcha;
 
     public int getMarcha() {
         return marcha;
