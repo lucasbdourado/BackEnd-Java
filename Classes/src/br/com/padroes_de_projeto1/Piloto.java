@@ -1,4 +1,4 @@
-package br.com.factory;
+package br.com.padroes_de_projeto1;
 
 public class Piloto {
 
