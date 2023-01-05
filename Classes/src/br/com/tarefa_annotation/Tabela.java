@@ -1,4 +1,4 @@
-package br.com.annotation;
+package br.com.tarefa_annotation;
 
 import java.lang.annotation.*;
 
