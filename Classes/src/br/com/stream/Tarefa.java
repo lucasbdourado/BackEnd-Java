@@ -1,6 +1,8 @@
 package br.com.stream;
 
 import br.com.stream.classes.Pessoa;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +10,10 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class Tarefa {
-    public static void main(String[] args) {
-        List<Pessoa> pessoas = new ArrayList<>();
-        List<Pessoa> feminino = new ArrayList<>();
+    static List<Pessoa> pessoas = new ArrayList<>();
+    static List<Pessoa> feminino = new ArrayList<>();
+    public static List main(String[] args) {
+
 
 
         for (int i = 0; i < 3; i++) {
@@ -31,5 +34,18 @@ public class Tarefa {
         for (Pessoa feminina: feminino) {
             System.out.println("Nome: " + feminina.getNome() + ", Sexo: " + feminina.getSexo());
         }
+        return feminino;
+    }
+
+    public static List getPessoas(){
+        pessoas.add(new Pessoa("Hugo", "Masculino"));
+        pessoas.add(new Pessoa("Fernanda", "Feminino"));
+        pessoas.add(new Pessoa("Carla", "Feminino"));
+        pessoas.add(new Pessoa("Michel", "Masculino"));
+        pessoas.add(new Pessoa("Roger", "Masculino"));
+        pessoas.add(new Pessoa("Fernanda", "Feminino"));
+        pessoas.add(new Pessoa("Maria", "Feminino"));
+
+        return feminino;
     }
 }
