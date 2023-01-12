@@ -1,6 +1,8 @@
 package br.com.lucasbdourado.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,11 +14,14 @@ public class Carro {
     private Long id;
     @Column(name = "modelo", length = 30, nullable = false)
     private String modelo;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name = "id_marca_fk",
+            foreignKey = @ForeignKey(name = "fk_marca_carro"),
+            referencedColumnName = "id", nullable = false)
     private Marca marca;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "acessorio_id")
-    private List<Acessorio> acessorios;
+    private List<Acessorio> acessorios = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -49,4 +54,6 @@ public class Carro {
     public void setAcessorios(List<Acessorio> acessorios) {
         this.acessorios = acessorios;
     }
+
+    public void addAcessorios(Acessorio acessorio){ this.acessorios.add(acessorio); }
 }

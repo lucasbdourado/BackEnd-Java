@@ -1,19 +1,20 @@
 package br.com.lucasbdourado.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "marca")
 public class Marca {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "marca_seq")
     @SequenceGenerator(name = "marca_seq", sequenceName = "sq_marca", initialValue = 1, allocationSize = 1)
     private Long id;
-
     @Column(name = "nome", length = 20, nullable = false)
     private String nome;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "carro_id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "marca", cascade=CascadeType.ALL)
     private List<Carro> carros;
 
     public Long getId() {
@@ -35,8 +36,10 @@ public class Marca {
     public List<Carro> getCarros() {
         return carros;
     }
-
     public void setCarros(List<Carro> carros) {
         this.carros = carros;
+    }
+    public void addCarro(Carro carro) {
+        this.carros.add(carro);
     }
 }
