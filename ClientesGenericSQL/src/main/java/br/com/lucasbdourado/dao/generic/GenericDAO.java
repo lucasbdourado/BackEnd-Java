@@ -1,29 +1,21 @@
 package br.com.lucasbdourado.dao.generic;
 
-import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import anotacao.ColunaTabela;
 import anotacao.Tabela;
 import anotacao.TipoChave;
 import br.com.lucasbdourado.dao.Persistente;
 import br.com.lucasbdourado.dao.generic.jdbc.ConnectionFactory;
-import br.com.lucasbdourado.exceptions.DAOException;
-import br.com.lucasbdourado.exceptions.MaisDeUmRegistroException;
-import br.com.lucasbdourado.exceptions.TableException;
-import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
-import br.com.lucasbdourado.exceptions.TipoElementoNaoConhecidoException;
+import br.com.lucasbdourado.exceptions.*;
+
+import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @author rodrigo.pires
@@ -94,7 +86,7 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
 			if(rowsAffected > 0) {
 				try (ResultSet rs = stm.getGeneratedKeys()){
 					if (rs.next()) {
-						Persistente per = (Persistente) entity;
+						Persistente per = entity;
 						per.setId(rs.getLong(1));
 					}
 				}

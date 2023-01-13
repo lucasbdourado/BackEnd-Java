@@ -3,9 +3,6 @@
  */
 package br.com.lucasbdourado.services.generic;
 
-import java.io.Serializable;
-import java.util.Collection;
-
 import br.com.lucasbdourado.dao.Persistente;
 import br.com.lucasbdourado.dao.generic.IGenericDAO;
 import br.com.lucasbdourado.exceptions.DAOException;
@@ -15,14 +12,13 @@ import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author rodrigo.pires
- *
  */
-public abstract class GenericService<T extends Persistente, E extends Serializable> 
-	implements IGenericService<T, E> {
-	
-	protected IGenericDAO<T,E> dao;
-	
-	public GenericService(IGenericDAO<T,E> dao) {
+public abstract class GenericService<T extends Persistente, E extends Seriali>
+		implements IGenericService<T, E> {
+
+	protected IGenericDAO<T, E> dao;
+
+	public GenericService(IGenericDAO<T, E> dao) {
 		this.dao = dao;
 	}
 

@@ -9,7 +9,7 @@ public interface Persistente {
 
     //public Long getCodigo();
 	
-	public Long getId();
-	
-	public void setId(Long id);
+	Long getId();
+
+	void setId(Long id);
 }

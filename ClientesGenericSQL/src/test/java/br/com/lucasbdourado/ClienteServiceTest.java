@@ -3,10 +3,6 @@
  */
 package br.com.lucasbdourado;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import br.com.lucasbdourado.dao.ClienteDaoMock;
 import br.com.lucasbdourado.dao.IClienteDAO;
 import br.com.lucasbdourado.domain.Cliente;
@@ -14,6 +10,9 @@ import br.com.lucasbdourado.exceptions.DAOException;
 import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
 import br.com.lucasbdourado.services.ClienteService;
 import br.com.lucasbdourado.services.IClienteService;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * @author rodrigo.pires
@@ -21,7 +20,7 @@ import br.com.lucasbdourado.services.IClienteService;
  */
 public class ClienteServiceTest {
 	
-	private IClienteService clienteService;
+	private final IClienteService clienteService;
 	
 	private Cliente cliente;
 	

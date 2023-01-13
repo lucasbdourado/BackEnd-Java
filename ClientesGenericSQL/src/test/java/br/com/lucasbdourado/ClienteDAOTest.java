@@ -3,14 +3,6 @@
  */
 package br.com.lucasbdourado;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Test;
-
 import br.com.lucasbdourado.dao.ClienteDAO;
 import br.com.lucasbdourado.dao.IClienteDAO;
 import br.com.lucasbdourado.domain.Cliente;
@@ -18,6 +10,13 @@ import br.com.lucasbdourado.exceptions.DAOException;
 import br.com.lucasbdourado.exceptions.MaisDeUmRegistroException;
 import br.com.lucasbdourado.exceptions.TableException;
 import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.Collection;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author rodrigo.pires
@@ -25,7 +24,7 @@ import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
  */
 public class ClienteDAOTest {
 	
-	private IClienteDAO clienteDao;
+	private final IClienteDAO clienteDao;
 
 	public ClienteDAOTest() {
 		clienteDao = new ClienteDAO();

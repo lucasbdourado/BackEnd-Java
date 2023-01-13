@@ -3,12 +3,6 @@
  */
 package br.com.lucasbdourado;
 
-import java.math.BigDecimal;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import br.com.lucasbdourado.dao.IProdutoDAO;
 import br.com.lucasbdourado.dao.ProdutoDaoMock;
 import br.com.lucasbdourado.domain.Produto;
@@ -16,6 +10,11 @@ import br.com.lucasbdourado.exceptions.DAOException;
 import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
 import br.com.lucasbdourado.services.IProdutoService;
 import br.com.lucasbdourado.services.ProdutoService;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.math.BigDecimal;
 
 /**
  * @author rodrigo.pires
@@ -23,7 +22,7 @@ import br.com.lucasbdourado.services.ProdutoService;
  */
 public class ProdutoServiceTest {
 
-	private IProdutoService produtoService;
+	private final IProdutoService produtoService;
 	
 	private Produto produto;
 	
