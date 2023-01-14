@@ -1,5 +1,4 @@
 package br.com.lucasbdourado.controller;
-package br.com.rpires.controller;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -11,13 +10,8 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.service.IClienteService;
-
-/**
- * @author rodrigo.pires
- *
- */
+import br.com.lucasbdourado.domain.Cliente;
+import br.com.lucasbdourado.service.IClienteService;
 @Named
 @ViewScoped
 public class ClienteController implements Serializable {

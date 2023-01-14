@@ -10,9 +10,7 @@ import br.com.lucasbdourado.exceptions.MaisDeUmRegistroException;
 import br.com.lucasbdourado.exceptions.TableException;
 import br.com.lucasbdourado.exceptions.TipoChaveNaoEncontradaException;
 
-public abstract class GenericService<T extends Persistente, E extends Serializable>
-        implements IGenericService<T, E> {
-
+public abstract class GenericService<T extends Persistente, E extends Serializable> implements IGenericService<T, E> {
     protected IGenericDAO<T, E> dao;
 
     public GenericService(IGenericDAO<T, E> dao) {

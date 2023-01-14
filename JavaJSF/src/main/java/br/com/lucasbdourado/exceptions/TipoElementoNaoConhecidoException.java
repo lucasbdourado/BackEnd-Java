@@ -1,8 +1,6 @@
 package br.com.lucasbdourado.exceptions;
 
 public class TipoElementoNaoConhecidoException extends Exception {
-
-
     private static final long serialVersionUID = -2268140970978666251L;
 
     public TipoElementoNaoConhecidoException(String msg) {
